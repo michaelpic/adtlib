@@ -8,4 +8,7 @@ struct s_nodo {
 
 typedef struct s_nodo nodo;
 
-void ordina(nodo**);
+/* nodo** seq: testa della lista
+   int    verso: crescente (0) o decrescente (1)
+*/
+void ordina(nodo** seq, int verso);
