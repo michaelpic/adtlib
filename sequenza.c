@@ -12,9 +12,3 @@ typedef struct s_nodo nodo;
    int    verso: crescente (0) o decrescente (1)
 */
 void ordina(nodo** seq, int verso);
-
-void ordina(nodo** seq, int verso) {
-  
-  superfunzionefaituttodasola(seq, verso);
-  
-}
