@@ -1,0 +1,132 @@
+/*
+#include<stdio.h>
+#include<stdlib.h>
+
+struct s_nodo{
+    int info;
+    struct s_nodo* next;
+};
+typedef struct s_nodo nodo;
+
+void insert_at(nodo**, int, int);
+void delete_at(nodo**, int);
+void print(nodo**);
+
+int main()
+{
+    nodo* head = NULL;
+    delete_at(&head, 0);
+    insert_at(&head, 5, 2);
+    insert_at(&head, 7, 2);
+    insert_at(&head, 3, 0);
+    insert_at(&head, 9, 5);
+    insert_at(&head, 4, 1);
+    print(&head);
+    delete_at(&head, 1);
+    delete_at(&head, 6);
+    print(&head);
+    delete_at(&head, 0);
+    print(&head);
+    printf("\nTuTO BEN");
+    int l = len(&head);
+    printf("\ndesso?");
+
+    ordina(&head, l, &head);
+    printf("\ngnanca qua?");
+    print(&head);
+
+
+}
+
+void print(nodo** sequence){
+    nodo* tmp = *sequence;
+    while(tmp != NULL){
+        printf("%d ", tmp->info);
+        tmp = tmp->next;
+    }
+    printf("\n");
+}
+
+void insert_at(nodo** sequence, int info, int pos){
+    nodo* n = malloc(sizeof(nodo));
+    n->info = info;
+
+    if(*sequence == NULL){
+        n->next = NULL;
+        *sequence = n;
+    }
+    else{
+        if(pos == 0){
+            n->next = *sequence;
+            *sequence = n;
+        }
+        else{
+            nodo* tmp = *sequence;
+            nodo* prev = tmp;
+            int i = 0;
+            while(tmp != NULL && i < pos){
+                prev = tmp;
+                tmp = tmp->next;
+                i++;
+            }
+            prev->next = n;
+            n->next = tmp;
+        }
+    }
+}
+
+void delete_at(nodo** sequence, int pos){
+    if(*sequence != NULL){
+        nodo* tmp = *sequence;
+        nodo* prev = tmp;
+        int i = 0;
+        if(pos == 0){
+            prev = *sequence;
+            *sequence = (*sequence)->next;
+            free(prev);
+        }
+        else{
+            while(tmp != NULL && i < pos){
+                prev = tmp;
+                tmp = tmp->next;
+                i++;
+            }
+            if(tmp != NULL){
+                prev->next = tmp->next;
+                free(tmp);
+            }
+        }
+    }
+}
+
+int len(nodo* list)
+{
+    int l = 1;
+    if(list == NULL)
+        return 1;
+    else
+         return l + len(list->next);
+}
+
+
+*/
+
+void ordina(nodo* list, int l, nodo** sequence)
+{
+    int i, j, tp, ordinato = 0;
+
+    for(i = list->next; i < l - 1; i++)
+        for(j = (*sequence)->next; j< l - 1 - i; j++)
+            if(list->info > (*sequence)->info)
+            {
+                tp = list->info;
+                list->info = (*sequence)->info;
+                (*sequence)->info = tp;
+            }
+
+}
+
+
+
+
+
