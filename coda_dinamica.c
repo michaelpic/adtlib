@@ -1,4 +1,4 @@
-//Marini Fabio 4 CI
+//gruppo Marini Biasia Simonetto Caineanu 4 CI
 #include <stdio.h>
 struct Nodo{
     int info;
